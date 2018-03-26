@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- concerne les mobiles :
+        ~ width=device-width : on ouvre la fenetre a la largeur de l'ecran 
+        ~ initial scale : reglage du zoom -->
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        
+        <title>XVG - Présentation</title>
+
+        <style>
+            .img-fluid{ width: 100%;height: 100%;}
+            .nav li{
+                float:left;
+            }
+            body {
+                position:relative;
+            }
+            .display-3 {
+                text-align:center;
+            }
+            .blockquote {
+                text-align:center;
+            }
+            .col p {
+                text-align : center;
+            }
+            
+            .row {
+                margin-top : 20px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+    <!-- BARRE DE NAVIGATION -->
+        <nav id="navigation" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<!--             <div class="container-fluid">a enlever si mettre à gauche -->
+                <div class="navbar-header">
+                    <img class="navbar-brand" src="images/verge.jpg" alt="logo" width=80px>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a class="nav-item nav-link active" href="#intro">Introduction</a></li>
+                    <li><a class="nav-item nav-link" href="#maj">Mises à jour</a></li>
+                    <li><a class="nav-item nav-link" href="#equipeDev">L'équipe de développement</a></li>
+                    <li><a class="nav-item nav-link" href="#presse">Presse</a></li>
+                    
+                </ul>
+<!--             </div> -->
+        </nav>
+        
+        <!-- CONTENU -->
+        <div id="contenu">
+            <img src="./images/index4.jpg" class="img-fluid" alt="Responsive image">
+
+            <h2 class="display-3" id="intro">Introduction</h2>
+            
+            <p style="text-align:center;">
+                Verge est une crypto-monnaie open-source. Elle a été créée en octobre 2014 par Sunerok. Son programme dérive d'un fork du DogeCoin. Elle est anonyme et intraçable. L'anonymat repose sur l'obfuscation de l'adresse IP et de la géolocalisation de l'utilisateur. Son nom à l'origine était DogeCoinDark en 2014, puis renommé en 2016 Verge Currency.
+            <p style="text-align:center;">
+                Ses transactions sont visibles dans un fichier par tous, mais l'identité et la localisation des utilisateurs sont protégées. Pour cela, Verge utilise les réseaux Tor et I2P, des réseaux anonymes. Verge a pour système de validation la preuve par travail, et emploie une multitude d'algorithmes dans sa chaîne de blocs (l'enregistrement les transactions) pour miner (vérification de la conformité des transactions) : Scrypt, X17, myr-groestl, blake2s, lyra2rev2.
+            <p style="text-align:center;">
+                En plus d'être sécurisées, les transactions sont rapides : entre 5 et 10 secondes. Verge propose deux porte-feuilles à ses utilisateurs : QT et Electrum. Les porte-feuilles Electrum sont rapides, ils ne nécessitent le téléchargement de la blockchain complète, à l'instar du porte-feuille QT.
+            </p>
+
+            <hr width=400px style="display: block;">
+
+            <h2 class="display-3" id="maj">Mises à jour</h2>
+                 <img src="./images/wraith.jpg" class="img-fluid" alt="wraithp">
+<!--                 <p style="text-align:center;"> -->
+<!--                     Cette mise à jour permet de à l'utilisateur de changer entre un blockchain publique et un blockchain privé, c'est-à-dire avoir ses transactions rendues publiques ou privées. -->
+<!--                 </p> -->
+                
+                
+                <div class="jumbotron">
+                    <h2 class="display-4">Prochaine mise à jour</h2>
+                    <h2 class="display-5">porte-feuille Android</h2>
+                </div>
+                
+                
+            <hr width=400px style="display: block;">
+            
+            
+            <h2 class="display-3" id="equipeDev">L'équipe de développement</h2>
+            
+
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>CryptoRekt<br>directeur mercatique</p>
+                    </div>
+                    <div class="col">
+                        <p>Sunerok<br>fondateur</p>
+                    </div>
+                    <div class="col">
+                        <p>Sasha Kolupaev<br>vice-président des opérations</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Kieran Daniels<br>vice-président de la commercialisation</p>
+                    </div>
+                    <div class="col">
+                        <p>Cess van Dam<br>gestionnaire de la page Facebook de Verge</p>
+                    </div>
+                    <div class="col">
+                        <p>SpookyKid<br>conseiller stratégique</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>CYANO<br>assistant design</p>
+                    </div>
+                    <div class="col">
+                        <p>Emanuel<br>gestionnaire du subreddit</p>
+                    </div>
+                    <div class="col">
+                        <p>Feyzi Ozsahin<br>assistant design</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>… Et plus de 200 collaborateurs</p>
+                    </div>
+                </div>
+            </div>
+                
+            <hr width=400px style="display: block;">
+                
+            <div id="presse">
+                <h2 class="display-3" id="presse">Presse</h2>
+                <blockquote class="blockquote">
+                    <p>Verge is the coin for forward looking investors</p>
+                    <footer class="blockquote-footer"><cite>Cryptogazette</cite></footer>
+                </blockquote>
+                <hr width=400px style="display: block;">
+                <blockquote class="blockquote">
+                    <p>XVG will have a long-term future</p>
+                    <footer class="blockquote-footer"><cite>Stocksgazette</cite></footer>
+                </blockquote>
+                <hr width=400px style="display: block;">
+                <blockquote class="blockquote">
+                    <p>
+                        Verge is one of the easiest coins to be mined on the market because any processor can mine it
+                    </p>
+                    <footer class="blockquote-footer"><cite>Oracle Times</cite></footer>
+                </blockquote>
+            </div><!-- avis de presse-->
+<!--             <footer> -->
+<!--                 <div id="container"> -->
+<!--                 <ul class="bd-footer-links"> -->
+<!--                     <li><a href="https://vergecurrency.com/langs/fr/">Site officiel de Verge</a></li> -->
+<!--                     <li><a href="https://github.com/vergecurrency">GitHub de Verge</a></li> -->
+<!--                     <li><a href="https://coinmarketcap.com/">Les cours du marché</a></li> -->
+<!--                 </ul> -->
+<!--                 </div> -->
+<!-- <!--                 <div class="d-inline bg-light"><a href="https://vergecurrency.com/langs/fr/">Site officiel de Verge</a></div> -->
+<!-- <!--                 <div class="d-inline bg-light"><a href="https://github.com/vergecurrency">GitHub de Verge</a></div> -->
+<!-- <!--                 <div class="d-inline bg-light"><a href="https://coinmarketcap.com/">Les cours du marché</a></div> -->
+
+<!--             </footer> -->
+            
+            
+                <footer class="page-footer font-small pt-4 mt-4">
+    
+                    <div class="container text-center text-md-left">
+                        <div class="row">
+    
+                            <div class="col-md-4">
+                                <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Liens et partenaires</h5>
+                                <a href="https://vergecurrency.com/langs/fr/">Site officiel de Verge</a><br>
+                                <a href="https://github.com/vergecurrency">GitHub</a><br>
+                                <a href="https://coinmarketcap.com/">CoinMarket</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                        <hr>
+
+                <div class="footer-copyright py-3 text-center">
+                    © 2018 Copyright :
+                    <a href="https://github.com/Poulpy"> REPAIN Paul </a>
+                </div>
+            
+            </footer>
+        </div><!-- contenu -->
+
+
+    </body>
+</html>
