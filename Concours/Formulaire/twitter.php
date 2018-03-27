@@ -50,7 +50,7 @@
     <body>
         <img src="images/index2.png" width=100%><!-- image Twitter en fond -->
 		<div id="contenu" class="container">
-            <form>
+            <form method="post">
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
