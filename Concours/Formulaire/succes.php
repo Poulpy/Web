@@ -57,6 +57,35 @@
                 <p><?php echo htmlspecialchars($_POST['prenom']); ?> <?php echo htmlspecialchars($_POST['nom']); ?>, votre inscription à Twitter est confirmée.<br>
                 Un mail vous sera envoyé dans les prochaines minutes à <?php echo htmlspecialchars($_POST['email']); ?>.</p>
             </div>
+	<!-- <?php
+		/*
+		$mail = htmlspecialchars($_POST['email']); // Déclaration de l'adresse de destination.
+		
+		if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui rencontrent des bogues.
+		{
+			$passage_ligne = "\r\n";
+		}
+		else
+		{
+			$passage_ligne = "\n";
+		}
+		
+		$message_txt = "htmlspecialchars($_POST['prenom']).htmlspecialchars($_POST['nom']), votre inscription à Twitter est confirmée. Votre mot de passe est :";
+		
+		$header = "From: \"EXPEDITEUR\"<paul.repain@yahoo.com>".$passage_ligne; 
+		$header.= "Reply-to: \"RETOUR\"<".htmlspecialchars($_POST['email'])">".$passage_ligne;
+		$header .= "MIME-Version: 1.0".$passage_ligne;
+		$header .= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+		
+		
+		$message = "...";
+		$message .= "Content-Type: XXX/XXX; charset=\"XXXXXX\"".$passage_ligne;
+		$message .= "Content-Transfer-Encoding: XXXXXXXXXX".$passage_ligne;
+		$message .= "...";
+		
+		$boundary = "-----=".md5(rand());
+		*/
+?>-->
         </div>
         <?php include("piedPage.php"); ?>
     </body>
