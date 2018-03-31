@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- concerne les mobiles :
-        ~ width=device-width : on ouvre la fenetre a la largeur de l'ecran
-        ~ initial scale : reglage du zoom -->
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script type="text/javascript" language="JavaScript">
+            // NE MARCHE PAS
+            // colore la case PASSWD de rouge si mots de passe tapés différents
+            var check = function() {
+                if (document.getElementById('mdp').value == document.getElementById('mdp2').value) {
+                    //document.getElementById('message').style.color = 'green';
+                    //document.getElementById('message').innerHTML = 'matching';
+                    document.getElementById('mots_de_passe').classList.toggle('form-group row has-success');
+                    document.getElementById('mdp2').classList.toggle('form-control form-control-success');
+                    //document.getElementById('mdp2').className = "form-control form-control-success";
+                    
+                }
+                else {
+                    //document.getElementById('message').style.color = 'red';
+                    //
+                    document.getElementById('mots_de_passe').classList.toggle('form-group row has-warning');
+                    document.getElementById('mdp2').classList.toggle("form-control form-control-danger");
+                    //document.getElementById('mots_de_passe').className = 'form-group row has-warning';
+                    //document.getElementById('mdp2').className = 'form-control form-control-danger';
+                    
+                    //document.getElementById('message').innerHTML = 'not matching';
+                }
+            }
+            
+            // l'utilisateur ne peux envoyer le formulaire s'il
+            // n'adhère pas à la politique de confidentialité
+            function checkCheckBoxes(theForm) {
+                return theForm.case.checked;
+            }
+
+        </script>
+        <?php include("headMin.php"); ?>
+
         <title>Twitter - Inscription</title>
         <style>
             form {
@@ -45,13 +68,17 @@
             fieldset, button {
                 margin-top:10px;
             }
+            message {
+                position:relative;
+            }
         </style>
 
     </head>
     <body>
+
         <img src="images/index2.png" width=100%/><!-- image Twitter en fond -->
             <div id="contenu" class="container">
-            <form action="succes.php" method="post">
+            <form action="succes.php" method="post" onsubmit="return checkCheckBoxes(this);">
                 <div class="container">
                     <div class="row"><!-- PREMIERE LIGNE -->
                         <div class="col">
@@ -77,35 +104,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row"><!-- TROISIEME LIGNE -->
-                        <div class="col"><!-- MOT DE PASSE -->
+                    <div class="row" id="mots_de_passe"><!-- TROISIEME LIGNE -->
+                        <div class="col-6"><!-- MOT DE PASSE -->
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Mot de passe">
+                                <input type="password" class="form-control" placeholder="Mot de passe" name="mdp" id="mdp">
                             </div>
                         </div>
-                        <div class="col"><!-- CONFIRMATION -->
+                        <div class="col-6"><!-- CONFIRMATION -->
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Confirmez votre mot de passe">
+                                <input type="password" class="form-control" placeholder="Confirmez votre mot de passe" name="mdp2" id="mdp2">
                             </div>
                         </div>
+                        <span id='message'></span>
                     </div>
+                        
                     <div class="row"><!-- QUATRIEME LIGNE -->
                         <div class="col"><!-- ANNEE DE NAISSSANCE -->
                             <div class="from-group">
-                                <input class="form-control" type="date">
+                                <input class="form-control" type="date" name="dob">
                             </div>
                         </div>
                         <div class="col"><!-- PAYS -->
                             <select class="custom-select">
                                 <option selected>Pays</option>
-                                <option value="1">France</option>
-                                <option value="2">Japon</option>
-                                <option value="3">Chine</option>
+                                <option value="1" name="pays1">France</option>
+                                <option value="2" name="pays2">Japon</option>
+                                <option value="3" name="pays3">Chine</option>
                             </select>
                         </div>
                         <div class="col"><!-- CODE POSTAL -->
                             <div class="from-group">
-                                <input class="form-control" type="text" placeholder="Code Postal">
+                                <input class="form-control" type="text" placeholder="Code Postal" name="codepostal">
                             </div>
                         </div>
                     </div>
@@ -114,13 +143,13 @@
                             <fieldset class="form-group">
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        <input type="radio" class="form-check-input" name="op" value="option1" checked>
                                         femme
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                                        <input type="radio" class="form-check-input" name="op" value="option2">
                                         homme
                                     </label>
                                 </div>
@@ -131,7 +160,7 @@
                         <div class="col"><!--  -->
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input">
+                                    <input type="checkbox" name="case" class="form-check-input">
                                     Vous avez lu et approuvez la politique de confidentialité
                                 </label>
                              </div>

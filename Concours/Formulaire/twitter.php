@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- concerne les mobiles :
-        ~ width=device-width : on ouvre la fenetre a la largeur de l'ecran 
-        ~ initial scale : reglage du zoom -->
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <?php include("headMin.php"); ?>
         <title>Twitter - Connexion</title>
         <style>
 			html, body {
@@ -50,19 +41,19 @@
     <body>
         <img src="images/index2.png" width=100%><!-- image Twitter en fond -->
 		<div id="contenu" class="container">
-            <form method="post">
+            <form action="login.php" method="post">
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
                             <div class="form-group">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email ou numéro de téléphone">
+                                <input type="email" class="form-control" placeholder="Email ou numéro de téléphone" name="login">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-10">
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Mot de passe">
+                                <input type="password" class="form-control" placeholder="Mot de passe" name="mdp">
                             </div>
                         </div>
                     </div>

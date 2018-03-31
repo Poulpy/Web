@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- concerne les mobiles :
-        ~ width=device-width : on ouvre la fenetre a la largeur de l'ecran 
-        ~ initial scale : reglage du zoom -->
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <?php include("headMin.php"); ?>
         <title>Twitter - Inscription réussie</title>
         <style>
 			html, body {
@@ -57,35 +48,62 @@
                 <p><?php echo htmlspecialchars($_POST['prenom']); ?> <?php echo htmlspecialchars($_POST['nom']); ?>, votre inscription à Twitter est confirmée.<br>
                 Un mail vous sera envoyé dans les prochaines minutes à <?php echo htmlspecialchars($_POST['email']); ?>.</p>
             </div>
-	<!-- <?php
-		/*
-		$mail = htmlspecialchars($_POST['email']); // Déclaration de l'adresse de destination.
-		
+        <?php
+        
+            
+        
+		 // adresse de destination.
+		$mail = htmlspecialchars($_POST['email']);
+		//
 		if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui rencontrent des bogues.
-		{
 			$passage_ligne = "\r\n";
-		}
 		else
-		{
 			$passage_ligne = "\n";
-		}
-		
-		$message_txt = "htmlspecialchars($_POST['prenom']).htmlspecialchars($_POST['nom']), votre inscription à Twitter est confirmée. Votre mot de passe est :";
-		
+		// message
+        // format txt
+		$message_txt = htmlspecialchars($_POST['prenom']).htmlspecialchars($_POST['nom']).", votre inscription à Twitter est confirmée. Votre mot de passe est :".htmlspecialchars($_POST['mdp']);
+		$message_txt .= "Numéro de téléphone : ".htmlspecialchars($_POST['num_tel']).".";
+        $message_txt .= "Code postal : ".htmlspecialchars($_POST['codepostal']);
+        $message_txt .= "Vous êtes un(e) ".htmlspecialchars($_POST['op']).".";
+        // format html
+        $message_html = "<html><head></head><body>".htmlspecialchars($_POST['prenom']).htmlspecialchars($_POST['nom']).", votre inscription à Twitter est confirmée. Votre mot de passe est :".htmlspecialchars($_POST['email'])."</body></html>";
+        //
+		$boundary = "-----=".md5(rand());
+        // objet
+        $sujet = "Inscription à Twitter";
+        // header
 		$header = "From: \"EXPEDITEUR\"<paul.repain@yahoo.com>".$passage_ligne; 
-		$header.= "Reply-to: \"RETOUR\"<".htmlspecialchars($_POST['email'])">".$passage_ligne;
+		$header.= "Reply-to: \"RETOUR\"<".htmlspecialchars($_POST['email']).">".$passage_ligne;
 		$header .= "MIME-Version: 1.0".$passage_ligne;
 		$header .= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+		//
+        
+        //
+        $message = $passage_ligne."--".$boundary.$passage_ligne;
+        
+        $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$passage_ligne;
+        $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+        $message.= $passage_ligne.$message_txt.$passage_ligne;
+        //
+        $message.= $passage_ligne."--".$boundary.$passage_ligne;
+        //
+        
+        $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;
+        $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+        $message.= $passage_ligne.$message_html.$passage_ligne;
+        
+        //
+        $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+        $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+        //
+         
+        //=====Envoi de l'e-mail.
+        if(mail($mail,$sujet,$message,$header))
+            echo 'TOUT SE PASSE BIEN';
+        else
+            echo 'CA VA PAS';
 		
-		
-		$message = "...";
-		$message .= "Content-Type: XXX/XXX; charset=\"XXXXXX\"".$passage_ligne;
-		$message .= "Content-Transfer-Encoding: XXXXXXXXXX".$passage_ligne;
-		$message .= "...";
-		
-		$boundary = "-----=".md5(rand());
-		*/
-?>-->
+        ?>
         </div>
         <?php include("piedPage.php"); ?>
     </body>
