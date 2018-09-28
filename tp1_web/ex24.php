@@ -1,7 +1,10 @@
 <html>
 
 <?php
-    
+    if (isset($_POST['mot']))
+    {
+        echo strtolower($_POST['mot']) ^ strtoupper($_POST['mot']) ^ $_POST['mot'];
+    }
 ?>
 
     <form action="" method="post">
