@@ -9,5 +9,7 @@
 <?php
     if (isset($_GET['e']))
         if ($_GET['e'] == 1)
+        {
             echo "<b>L'identifiant ou le mot de passe sont incorrectes</b>";
+        }
 ?>
