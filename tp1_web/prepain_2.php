@@ -42,12 +42,14 @@ Exemple :
 <?php
     // on vérifie que les données du formulaire sont entrés
     if (isset($_POST['ext'], $_POST['nom'], $_POST['ref'])) {
-        // on vérifie que la référence a bien été saisie
-        $bonne_saisie = preg_match("/^(ref|Ref)-[0-9]{4}#[A-Za-z]{2,4}$/", $_POST['ref']);
-        if ($bonne_saisie == 0)// on affiche un message d'erreur
-            echo "<b style='color:#FF0000;'>ERREUR : la reference renseignee est incorrecte.</b>";
-        else// sinon on affiche le domaine ; l'extension ; la référence
-            echo $_POST['nom']. " ; " . $_POST['ext'] . " ; " . $_POST['ref'];
+        if (!empty($_POST['nom']) and !empty($_POST['ext']) and !empty($_POST['ref'])) {
+            // on vérifie que la référence a bien été saisie
+            $bonne_saisie = preg_match("/^ref-[0-9]{4}\#[A-Za-z]{2,4}$/", $_POST['ref']);
+            if ($bonne_saisie == 0)// on affiche un message d'erreur
+                echo "<b style='color:#FF0000;'>ERREUR : la reference renseignee est incorrecte.</b>";
+            else// sinon on affiche le domaine ; l'extension ; la référence
+                echo $_POST['nom']. " ; " . $_POST['ext'] . " ; " . $_POST['ref'];
+        }
     }
     
 ?>
