@@ -1,5 +1,6 @@
 <html>
-	<?php include("ex23menu.php"); ?>
-	<?php include("ex23display.php"); ?>
-	<?php include("ex23pied.php"); ?>
+    <?php include("ex23tete.php") ?>
+    <?php include("ex23menu.php"); ?>
+    <?php include("ex23display.php"); ?>
+    	<?php include("ex23pied.php"); ?>
 </html>

@@ -1,5 +1,5 @@
 <html>
-    <form method='post'>
+    <form action='ex34result.php' method='post'>
         <fieldset>
             <legend>Fonctions</legend>
             <select name='func'>
@@ -10,10 +10,4 @@
             <input type='submit' name='ok' value='valider'/>
         </fieldset>
     </form>
-    <?php
-        $tab = array ('x' => array(), 'y' => array());
-        if (isset($_POST['func'])) {
-            if ($_POST['func'])
-        }
-    ?>
 </html>
