@@ -7,7 +7,9 @@
                 $_SESSION['mdp'] = $_POST['mdp'];
                 header('Location: ex29accueil.php');
             }
-            header('location: ex29log.php?e=1');
+            else {
+                header('location: ex29log.php?e=1');
+            }
         }
     }
 ?>
