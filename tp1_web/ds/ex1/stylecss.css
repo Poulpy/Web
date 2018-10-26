@@ -1,0 +1,20 @@
+table {
+ border-width:1px; 
+ border-style:solid; 
+ border-color:black;
+ width:800px;
+ }
+
+td { 
+ border-width:1px;
+ border-style:solid; 
+ border-color:blue;
+ width:120px;
+ }
+ 
+th { 
+ border-width:1px;
+ border-style:solid; 
+ background-color:yellow;
+ width:120px;
+ }
