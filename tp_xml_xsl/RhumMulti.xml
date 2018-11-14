@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="application/xml" href="Transat.xsl"?>
+
 <classe nom="RhumMulti">
 	  <descriptif> La    catégorie    Rhum    
 Multicoques rassemble tous les bateaux à deux ou trois 

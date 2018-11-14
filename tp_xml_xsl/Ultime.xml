@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="application/xml" href="Transat.xsl"?>
+
 <classe nom="Ultime">
 		<descriptif>
 		 Longueur supérieure ou égale à 

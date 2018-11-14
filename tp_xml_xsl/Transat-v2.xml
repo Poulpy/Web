@@ -2,7 +2,7 @@
 <?xml-stylesheet type="application/xml" href="Transat.xsl"?>
 
 
-<!DOCTYPE  transat  SYSTEM "Transat.dtd"
+<!DOCTYPE  transat  SYSTEM "Transat-v2.dtd"
 [
 	<!ENTITY nom_transat "Route du Rhum">
 	<!ENTITY repertoire_photos "photos/">
