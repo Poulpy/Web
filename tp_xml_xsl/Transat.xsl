@@ -23,7 +23,9 @@
           </tr>
           <tr>
             <td>
-              <xsl:apply-templates select="classes/classe" mode="sommaire" />
+              <div id="sommaire">
+                <xsl:apply-templates select="classes/classe" mode="sommaire" />
+              </div>
             </td>
             <td>
               <xsl:apply-templates select="classes/classe" />
@@ -33,19 +35,26 @@
       </body>
     </html>
   </xsl:template>
+
   <xsl:template match="classe" mode="sommaire">
     <xsl:number count="classe" format="(1) " />
     <xsl:value-of select="@nom" /><br />
   </xsl:template>
+
   <xsl:template match="classe">
-    <xsl:number count="classe" format="(1) " />
-    <xsl:value-of select="@nom" /><br />
-    <p>
-      <xsl:value-of select="descriptif" />
-      <br />
-      <xsl:apply-templates select="voiliers" />
-    </p>
+    <div id="{@nom}">
+      <xsl:number count="classe" format="(1) " />
+      <xsl:value-of select="@nom" /><br />
+      <p>
+        <xsl:value-of select="descriptif" />
+        <br /><br /><br />
+        <xsl:apply-templates select="voiliers" />
+      </p>
+      <a href="#{@nom}">Retourner vers classe</a><br />
+      <a href="#sommaire">Retourner vers le sommaire</a><br /><br />
+    </div>
   </xsl:template>
+
   <xsl:template match="voiliers">
     <xsl:apply-templates select="voilier" />
   </xsl:template>
