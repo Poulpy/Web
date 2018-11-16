@@ -11,16 +11,13 @@
 	<!ENTITY date_depart "4 novembre 2018">	 
 ]>
 
-<transat nom="&nom_transat;" logo="&repertoire_photos;index.jpg" annee="2018" xmlns:xi="http://www.w3.org/2001/XInclude">
+<transat nom="&nom_transat;" logo="&repertoire_photos;index.jpg" annee="2018" 
+        xmlns:xi="http://www.w3.org/2001/XInclude" >
   <ville-depart>&depart;</ville-depart>
   <ville-arrivee>&arrivee;</ville-arrivee>
   <date-depart>&date_depart;</date-depart>
   <classes>
-	<xi:include href="Ultime.xml" />
-	<xi:include href="Multi50.xml" />
-    <xi:include href="Imoca.xml" />
-    <xi:include href="Class40.xml" />
-    <xi:include href="RhumMulti.xml" />
-    <xi:include href="RhumMono.xml" />
+	<xi:include href="Imoca.xml" />
+   
   </classes>
 </transat>

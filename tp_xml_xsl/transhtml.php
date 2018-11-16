@@ -2,7 +2,7 @@
     $xslDoc = new DOMDocument();
     $xslDoc->load($_GET["xsl"]);
     $xmlDoc = new DOMDocument();
-    $xmlDoc->load($_GET["xsl"]);
+    $xmlDoc->load($_GET["xml"]);
     $xmlDoc->xinclude();
     $proc = new XSLTProcessor();
     $proc->importStylesheet($xslDoc);
