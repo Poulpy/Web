@@ -29,10 +29,19 @@ function callback_peupleChoix() {
 }
 
 function afficheSelection () {
-    if (n = document.getElementById("selection").firstChild)
+    // we eliminate the children
+    while (n = document.getElementById("selection").firstChild)
         document.getElementById("selection").removeChild(n);
+
 	indice = document.getElementById("choix").selectedIndex;
 	nomVoilier = document.getElementById("choix").value;
     // on prend le nom du voilier en fonction du choix
 	document.getElementById("selection").appendChild(document.createTextNode(indice + 1 + " - " + nomVoilier));
+    
+    voilier = xhr.responseXML.getElementsByTagName("voilier")[indice];
+    adresse = voilier.getElementsByTagName("photo")[0].getAttribute("adresse");
+    image = document.createElement("img");
+    image.setAttribute('src', adresse);
+    document.getElementById("selection").appendChild(image);
+    
 } //afficheSelection ()
