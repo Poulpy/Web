@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="application/xml" href="Voiliers-v2.xsl" ?>
+<voiliers>
+    <voilier classe="Class 40" annee="2018">
+        <nom>Grizzly Barber Shop</nom>
+        <architecte>Olivier Philippot</architecte>
+        <photo adresse="photos/robin.jpg" />
+        <skipper>
+            <nom_skipper>Cédric de Kervenoal</nom_skipper>
+            <texte>
+                Avocat à Paris, <nom_skipper>Cédric de Kervenoal
+                </nom_skipper> a, de fait, une vie professionnelle bien remplie, 
+                mais son CV nautique n’en demeure pas moins garni.
+                a passé une large partie de son enfance à naviguer au <nomgeo>
+                Havre de Rothéneuf</nomgeo>, à mi-chemin entre <nomgeo>
+                Saint-Malo</nomgeo> et la <nomgeo>pointe du Grouin</nomgeo>.
+            </texte>
+        </skipper>
+    </voilier>
+    <voilier classe="Class 40" annee="2018">
+        <nom>volvo</nom>
+        <architecte>Sam Manuard</architecte>
+        <photo adresse="photos/volvo.jpg" />
+        <skipper>
+            <nom_skipper>Jonas Gerckens</nom_skipper>
+            <texte>
+                <nom_skipper>Jonas Gerckens</nom_skipper> est un skipper
+                endurci, fort de nombreuses expériences. C'est en 2013 que sa
+                carrière va commencer, et depuis il enchaîne les courses : 
+                15 courses en 5 ans. Il habite en <nomgeo>Belgique</nomgeo>.
+            </texte>
+        </skipper>
+    </voilier>
+</voiliers>
