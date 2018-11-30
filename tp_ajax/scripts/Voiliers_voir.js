@@ -24,7 +24,8 @@ function callback_peupleChoix() {
             elt = document.createElement("option");
             noeudTexte = document.createTextNode(nomVoilier);
         
-            elt.appendChild(noeudTexte);div.appendChild(elt);
+            elt.appendChild(noeudTexte);
+            div.appendChild(elt);
         }
     }
 }
