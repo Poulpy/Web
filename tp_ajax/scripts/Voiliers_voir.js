@@ -2,6 +2,7 @@ window.onload = initPage;
      
 function initPage() {
     peupleChoix("Voiliers.xml");
+    document.getElementById("choix").onchange = afficheSelection;
 }
 
 function peupleChoix(url) {
@@ -16,6 +17,7 @@ function callback_peupleChoix() {
         tabNoms = xhr.responseXML.getElementsByTagName("nom");
         div = document.getElementById("choix");// we take the form
 
+        // for each sailboat we create an <option>
         for (i = 0; i != tabNoms.length; i++) {
             nomVoilier = tabNoms[i].firstChild.nodeValue;
         
@@ -26,3 +28,15 @@ function callback_peupleChoix() {
         }
     }
 }
+
+function afficheSelection () {
+    // if there is a child, we eliminate it
+    while (n = document.getElementById("selection").firstChild)
+        document.getElementById("selection").removeChild(n);
+
+    // we take the sailboat selected and display it below
+	indice = document.getElementById("choix").selectedIndex;
+	nomVoilier = document.getElementById("choix").value;
+    // on prend le nom du voilier en fonction du choix
+	document.getElementById("selection").appendChild(document.createTextNode(indice + 1 + " - " + nomVoilier));
+} //afficheSelection ()
